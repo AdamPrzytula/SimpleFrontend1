@@ -40,6 +40,15 @@
                     }
                 </button>
             </th>
+            <th>
+                <button class="btn btn-link p-0 text-decoration-none" @onclick="() => OnSortChanged(nameof(ProductModel.CompanyName))">
+                    CompanyName
+                    @if (SortProperty == nameof(ProductModel.CompanyName))
+                    {
+                        <span>@GetSortIcon(SortDirection)</span>
+                    }
+                </button>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -56,6 +65,7 @@
                 <td>@product.Name</td>
                 <td>@product.Description</td>
                 <td>@product.Price</td>
+                <td>@product.CompanyName</td>
             </tr>
         }
     </tbody>
